@@ -1,16 +1,20 @@
-import React, {useEffect } from "react";
+import React, {useEffect, useContext} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor, Line } from "./pages";
+import { StateContext, AppContext } from "./contexts/ContextProvider";
 import "./App.css";
 
 
 const App: React.FC = () => {
+    const { activeMenu } = useContext(StateContext) as AppContext;
 
-    const activeMenu: boolean = true;
+    console.log("activeMenuIs: ",activeMenu);
+
+
 
     return(
         <div>
